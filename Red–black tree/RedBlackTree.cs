@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Red_black_tree
+namespace RedBlackTree
 {
     class RedBlackTree
     {

@@ -1,7 +1,7 @@
-﻿<Application x:Class="Red_black_tree.App"
+﻿<Application x:Class="RedBlackTreeVisuals.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Red_black_tree"
+             xmlns:local="clr-namespace:RedBlackTreeVisuals"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

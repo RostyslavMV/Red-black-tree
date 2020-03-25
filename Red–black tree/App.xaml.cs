@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Red_black_tree
+namespace RedBlackTreeVisuals
 {
     /// <summary>
     /// Interaction logic for App.xaml

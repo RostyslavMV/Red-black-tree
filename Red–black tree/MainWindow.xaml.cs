@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Red_black_tree
+namespace RedBlackTreeVisuals
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

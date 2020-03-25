@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace RedBlackTree
 {
-    class RedBlackTree
+    class RedBlackTree<TValue>
     {
+        public RedBlackTreeNode<TValue> Root { get; private set; }
+
+        public RedBlackTree()
+        {
+            Root = null;
+        }
     }
 }

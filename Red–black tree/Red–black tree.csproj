@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="RedBlackTree.cs" />
-    <Compile Include="RedBlackTreeNode.cs" />
+    <Compile Include="Models\RedBlackTree.cs" />
+    <Compile Include="Models\RedBlackTreeNode.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -61,6 +61,8 @@
     <Compile Include="Controls\RedBlackTreeViewControl.xaml.cs">
       <DependentUpon>RedBlackTreeViewControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Duplicate classes\RedBlackTreeDuplicate.cs" />
+    <Compile Include="Duplicate classes\RedBlackTreeNodeDuplicate.cs" />
     <Compile Include="Models\RedBlackTree.cs" />
     <Compile Include="Models\RedBlackTreeNode.cs" />
     <Page Include="Controls\RedBlackTreeViewControl.xaml">

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace RedBlackTreeVisuals
 {
     /// <summary>
-    /// Interaction logic for RedBlackTreeViewControl.xaml
+    /// Interaction logic for RedBlackTreeView.xaml
     /// </summary>
-    public partial class RedBlackTreeViewControl : UserControl
+    public partial class RedBlackTreeView
     {
-        public RedBlackTreeViewControl()
+        public RedBlackTreeView()
         {
             InitializeComponent();
         }

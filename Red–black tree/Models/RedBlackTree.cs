@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedBlackTree
+namespace RedBlackTreeAlgorithms
 {
-    class RedBlackTree<TValue>
+    class RedBlackTree<T>
     {
-        public RedBlackTreeNode<TValue> Root { get; private set; }
+        public RedBlackTreeNode<T> Root { get; private set; }
 
         public RedBlackTree()
         {

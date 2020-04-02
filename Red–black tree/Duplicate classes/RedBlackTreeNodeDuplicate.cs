@@ -4,37 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedBlackTree
+namespace RedBlackTreeAlgorithms
 {
-    class RedBlackTreeNodeDuplicate<TValue>
+    class RedBlackTreeNodeDuplicate<T>
     {
-        public enum Color
-        {
-            Red,
-            Black
-        };
-        public TValue value { get; set; }
+        public T value { get; set; }
         public Color color { get; set; }
-        public RedBlackTreeNodeDuplicate<TValue> parrent { get; set; }
-        public RedBlackTreeNodeDuplicate<TValue> left { get; set; }
-        public RedBlackTreeNodeDuplicate<TValue> right { get; set; }
+        public RedBlackTreeNodeDuplicate<T> parrent { get; set; }
+        public RedBlackTreeNodeDuplicate<T> left { get; set; }
+        public RedBlackTreeNodeDuplicate<T> right { get; set; }
 
-        public RedBlackTreeNodeDuplicate(TValue value)
+        public RedBlackTreeNodeDuplicate(T value)
         {
             this.value = value;
             left = null;
             right = null;
             parrent = null;
         }
-        public RedBlackTreeNodeDuplicate(TValue value, RedBlackTreeNodeDuplicate<TValue> parrentNode)
+        public RedBlackTreeNodeDuplicate(T value, RedBlackTreeNodeDuplicate<T> parrentNode)
         {
             this.value = value;
             left = null;
             right = null;
             parrent = parrentNode;
         }
-        public void SetLeftRightParrent(RedBlackTreeNodeDuplicate<TValue> leftNode, RedBlackTreeNodeDuplicate<TValue> rightNode, 
-            RedBlackTreeNodeDuplicate<TValue> parrentNode)
+        public void SetLeftRightParrent(RedBlackTreeNodeDuplicate<T> leftNode, RedBlackTreeNodeDuplicate<T> rightNode, 
+            RedBlackTreeNodeDuplicate<T> parrentNode)
         {
             left = leftNode;
             right = rightNode;

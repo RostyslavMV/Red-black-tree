@@ -58,14 +58,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls\RedBlackTreeViewControl.xaml.cs">
-      <DependentUpon>RedBlackTreeViewControl.xaml</DependentUpon>
+    <Compile Include="Controls\RedBlackTreeView.xaml.cs">
+      <DependentUpon>RedBlackTreeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Duplicate classes\RedBlackTreeDuplicate.cs" />
     <Compile Include="Duplicate classes\RedBlackTreeNodeDuplicate.cs" />
+    <Compile Include="Models\Color.cs" />
     <Compile Include="Models\RedBlackTree.cs" />
     <Compile Include="Models\RedBlackTreeNode.cs" />
-    <Page Include="Controls\RedBlackTreeViewControl.xaml">
+    <Compile Include="ViewModel\RedBlackTreeNodeViewModel.cs" />
+    <Compile Include="ViewModel\RedBlackTreeViewModel.cs" />
+    <Page Include="Controls\RedBlackTreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

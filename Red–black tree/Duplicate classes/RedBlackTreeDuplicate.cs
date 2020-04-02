@@ -15,23 +15,39 @@ namespace RedBlackTreeAlgorithms
             Root = null;
         }
 
-        public static RedBlackTreeDuplicate<int> makeExampleTree()
+        public static RedBlackTreeDuplicate<int> MakeExampleTree()
         {
-            RedBlackTreeDuplicate<int> tree = new RedBlackTreeDuplicate<int>();
-            tree.Root = new RedBlackTreeNodeDuplicate<int>(10);
-            tree.Root.color = Color.Black;
-            RedBlackTreeNodeDuplicate<int> node1 = new RedBlackTreeNodeDuplicate<int>(1);
-            node1.color = Color.Red;
-            RedBlackTreeNodeDuplicate<int> node2 = new RedBlackTreeNodeDuplicate<int>(2);
-            node2.color = Color.Black;
-            RedBlackTreeNodeDuplicate<int> node3 = new RedBlackTreeNodeDuplicate<int>(3);
-            node3.color = Color.Red;
-            RedBlackTreeNodeDuplicate<int> node4 = new RedBlackTreeNodeDuplicate<int>(4);
-            node4.color = Color.Black;
-            RedBlackTreeNodeDuplicate<int> node5 = new RedBlackTreeNodeDuplicate<int>(5);
-            node5.color = Color.Red;
-            RedBlackTreeNodeDuplicate<int> node6 = new RedBlackTreeNodeDuplicate<int>(6);
-            node6.color = Color.Black;
+            RedBlackTreeDuplicate<int> tree = new RedBlackTreeDuplicate<int>
+            {
+                Root = new RedBlackTreeNodeDuplicate<int>(10)
+                {
+                    Color = NodeColor.Black
+                }
+            };
+            RedBlackTreeNodeDuplicate<int> node1 = new RedBlackTreeNodeDuplicate<int>(1)
+            {
+                Color = NodeColor.Red
+            };
+            RedBlackTreeNodeDuplicate<int> node2 = new RedBlackTreeNodeDuplicate<int>(2)
+            {
+                Color = NodeColor.Black
+            };
+            RedBlackTreeNodeDuplicate<int> node3 = new RedBlackTreeNodeDuplicate<int>(3)
+            {
+                Color = NodeColor.Red
+            };
+            RedBlackTreeNodeDuplicate<int> node4 = new RedBlackTreeNodeDuplicate<int>(4)
+            {
+                Color = NodeColor.Black
+            };
+            RedBlackTreeNodeDuplicate<int> node5 = new RedBlackTreeNodeDuplicate<int>(5)
+            {
+                Color = NodeColor.Red
+            };
+            RedBlackTreeNodeDuplicate<int> node6 = new RedBlackTreeNodeDuplicate<int>(6)
+            {
+                Color = NodeColor.Black
+            };
             tree.Root.SetLeftRightParrent(node1, node2, null);
             node1.SetLeftRightParrent(node3,node4,tree.Root);
             node2.SetLeftRightParrent(null,node5,tree.Root);

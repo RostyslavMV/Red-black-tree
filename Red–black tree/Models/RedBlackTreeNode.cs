@@ -8,25 +8,25 @@ namespace RedBlackTreeAlgorithms
 {
     class RedBlackTreeNode<T>
     {
-        public T value { get; private set; }
-        public Color color { get; private set; }                                                   
-        public RedBlackTreeNode<T> parrent { get; private set; }                              
-        public RedBlackTreeNode<T> left { get; private set; }                                 
-        public RedBlackTreeNode<T> right { get; private set; }                                
+        public T Value { get; private set; }
+        public NodeColor Color { get; private set; }                                                   
+        public RedBlackTreeNode<T> Parrent { get; private set; }                              
+        public RedBlackTreeNode<T> Left { get; private set; }                                 
+        public RedBlackTreeNode<T> Right { get; private set; }                                
                                                                                                    
         RedBlackTreeNode(T value)                                                             
         {                                                                                          
-            this.value = value;                                                                    
-            left = null;                                                                           
-            right = null;                                                                          
-            parrent = null;                                                                        
+            this.Value = value;                                                                    
+            Left = null;                                                                           
+            Right = null;                                                                          
+            Parrent = null;                                                                        
         }                                                                                          
         RedBlackTreeNode(T value, RedBlackTreeNode<T> parrentNode)                       
         {                                                                                          
-            this.value = value;                                                                    
-            left = null;
-            right = null;
-            parrent = parrentNode;
+            this.Value = value;                                                                    
+            Left = null;
+            Right = null;
+            Parrent = parrentNode;
         }
     }
 }

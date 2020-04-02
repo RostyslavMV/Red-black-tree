@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RedBlackTreeAlgorithms
 {
-    public enum Color
+    public enum NodeColor
     {
         Red,
         Black

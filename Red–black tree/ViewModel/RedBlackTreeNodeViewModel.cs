@@ -11,8 +11,8 @@ namespace RedBlackTreeVisuals
 {
     class RedBlackTreeNodeViewModel<T> : INotifyPropertyChanged
     {
-        public RedBlackTreeAlgorithms.Color color { get; private set; }
-        public ObservableCollection<RedBlackTreeNodeDuplicate<T>> children { get; private set; }
+        public RedBlackTreeAlgorithms.NodeColor Color { get; private set; }
+        public ObservableCollection<RedBlackTreeNodeDuplicate<T>> Children { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

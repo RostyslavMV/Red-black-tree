@@ -8,32 +8,32 @@ namespace RedBlackTreeAlgorithms
 {
     class RedBlackTreeNodeDuplicate<T>
     {
-        public T value { get; set; }
-        public Color color { get; set; }
-        public RedBlackTreeNodeDuplicate<T> parrent { get; set; }
-        public RedBlackTreeNodeDuplicate<T> left { get; set; }
-        public RedBlackTreeNodeDuplicate<T> right { get; set; }
+        public T Value { get; set; }
+        public NodeColor Color { get; set; }
+        public RedBlackTreeNodeDuplicate<T> Parrent { get; set; }
+        public RedBlackTreeNodeDuplicate<T> Left { get; set; }
+        public RedBlackTreeNodeDuplicate<T> Right { get; set; }
 
         public RedBlackTreeNodeDuplicate(T value)
         {
-            this.value = value;
-            left = null;
-            right = null;
-            parrent = null;
+            this.Value = value;
+            Left = null;
+            Right = null;
+            Parrent = null;
         }
         public RedBlackTreeNodeDuplicate(T value, RedBlackTreeNodeDuplicate<T> parrentNode)
         {
-            this.value = value;
-            left = null;
-            right = null;
-            parrent = parrentNode;
+            this.Value = value;
+            Left = null;
+            Right = null;
+            Parrent = parrentNode;
         }
         public void SetLeftRightParrent(RedBlackTreeNodeDuplicate<T> leftNode, RedBlackTreeNodeDuplicate<T> rightNode, 
             RedBlackTreeNodeDuplicate<T> parrentNode)
         {
-            left = leftNode;
-            right = rightNode;
-            parrent = parrentNode;
+            Left = leftNode;
+            Right = rightNode;
+            Parrent = parrentNode;
         }
     }
 }

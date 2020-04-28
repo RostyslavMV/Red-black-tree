@@ -7,8 +7,18 @@ using System.Threading.Tasks;
 
 namespace RedBlackTreeVisuals
 {
-    class RedBlackTreeViewModel : INotifyPropertyChanged
+    class RedBlackTreeViewModel<T> : INotifyPropertyChanged
     {
+        public RedBlackTreeNodeViewModel<T> root;
+        public RedBlackTreeNodeViewModel<T> Root
+        {
+            get => root;
+            set
+            {
+                root = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Root"));
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }

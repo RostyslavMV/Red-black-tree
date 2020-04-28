@@ -8,6 +8,6 @@
         Icon="/Images/Logo/icon.ico"
         Title="Red-black tree" Height="450" Width="800">
     <Grid>
-        
+        <local:RedBlackTreeView/>
     </Grid>
 </Window>

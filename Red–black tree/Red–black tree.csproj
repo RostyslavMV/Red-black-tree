@@ -61,11 +61,13 @@
     <Compile Include="Controls\RedBlackTreeView.xaml.cs">
       <DependentUpon>RedBlackTreeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\NodeTypeToImageConverter.cs" />
     <Compile Include="Duplicate classes\RedBlackTreeDuplicate.cs" />
     <Compile Include="Duplicate classes\RedBlackTreeNodeDuplicate.cs" />
     <Compile Include="Models\NodeColor.cs" />
     <Compile Include="Models\RedBlackTree.cs" />
     <Compile Include="Models\RedBlackTreeNode.cs" />
+    <Compile Include="ViewModel\NodeType.cs" />
     <Compile Include="ViewModel\RedBlackTreeNodeViewModel.cs" />
     <Compile Include="ViewModel\RedBlackTreeViewModel.cs" />
     <Page Include="Controls\RedBlackTreeView.xaml">
@@ -115,7 +117,6 @@
     <Resource Include="Images\Logo\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\" />
     <Folder Include="Styles\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

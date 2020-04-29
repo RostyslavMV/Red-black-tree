@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:RedBlackTreeVisuals"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <local:NodeTypeToImageConverter x:Key="NodeTypeToImageConverter" />
     </Application.Resources>
 </Application>

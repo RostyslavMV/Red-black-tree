@@ -23,6 +23,7 @@ namespace RedBlackTreeVisuals
         public RedBlackTreeView()
         {
             InitializeComponent();
+            this.DataContext = RedBlackTreeViewModel
         }
     }
 }

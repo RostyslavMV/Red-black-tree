@@ -10,7 +10,7 @@
     <TreeView.ItemTemplate>
         <HierarchicalDataTemplate>
             <StackPanel Orientation="Horizontal">
-                <Image Width="20" Margin="3"
+                <Image Width="20" Margin="3" Source="{Binding Type, Converter={StaticResource NodeTypeToImageConverter }}" />
             </StackPanel>
         </HierarchicalDataTemplate>
     </TreeView.ItemTemplate>

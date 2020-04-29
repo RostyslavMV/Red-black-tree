@@ -11,17 +11,11 @@ namespace RedBlackTreeVisuals
 {
     class RedBlackTreeNodeViewModel<T> : INotifyPropertyChanged
     {
-        RedBlackTreeNodeViewModel(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
+        public RedBlackTreeNodeViewModel(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
         {
-            Value = redBlackTreeNode.Value;
-            Color = redBlackTreeNode.Color;
-            if (redBlackTreeNode.Left != null)
-                Children.Add(redBlackTreeNode.Left);
-            if (redBlackTreeNode.Right != null)
-                Children.Add(redBlackTreeNode.Right);
-            UpdateNodeType();
+            UpdateNodeProperties(redBlackTreeNode);
         }
-        public T value;
+        private T value;
         public T Value
         {
             get => value;
@@ -32,7 +26,7 @@ namespace RedBlackTreeVisuals
             }
         }
 
-        public RedBlackTreeAlgorithms.NodeColor color;
+        private RedBlackTreeAlgorithms.NodeColor color;
         public RedBlackTreeAlgorithms.NodeColor Color
         {
             get => color;
@@ -42,8 +36,8 @@ namespace RedBlackTreeVisuals
                 PropertyChanged(this, new PropertyChangedEventArgs("Color"));
             }
         }
-        public ObservableCollection<RedBlackTreeNodeDuplicate<T>> children;
-        public ObservableCollection<RedBlackTreeNodeDuplicate<T>> Children
+        private ObservableCollection<RedBlackTreeNodeViewModel<T>> children;
+        public ObservableCollection<RedBlackTreeNodeViewModel<T>> Children
         {
             get => children;
             set
@@ -72,11 +66,11 @@ namespace RedBlackTreeVisuals
 
         private void ClearChildren()
         {
-            this.Children = new ObservableCollection<RedBlackTreeNodeDuplicate<T>>();
+            this.Children = new ObservableCollection<RedBlackTreeNodeViewModel<T>>();
             this.Children.Add(null);
         }
 
-        public NodeType type;
+        private NodeType type;
 
         public NodeType Type
         {
@@ -87,8 +81,33 @@ namespace RedBlackTreeVisuals
                 PropertyChanged(this, new PropertyChangedEventArgs("Type"));
             }
         }
-        private void UpdateNodeType()
+
+        private bool isLeft;
+
+        public bool IsLeft
         {
+            get => isLeft;
+            set
+            {
+                isLeft = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("IsLeft"));
+            }
+        }
+        private void UpdateNodeProperties(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
+        {
+            if (redBlackTreeNode.Left != null)
+            {
+                var left = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Left);
+                Children.Add(left);
+            }
+            if (redBlackTreeNode.Left != null)
+            {
+                var right = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Right);
+                Children.Add(right);
+            }
+            IsLeft = (redBlackTreeNode.Parrent.Left == redBlackTreeNode) ? true : false; 
+            Color = redBlackTreeNode.Color;
+            Value = redBlackTreeNode.Value;
             if (Color == RedBlackTreeAlgorithms.NodeColor.Black)
             {
                 if (IsNotLeaf()) Type = NodeType.BlackRegular;
@@ -99,6 +118,7 @@ namespace RedBlackTreeVisuals
                 if (IsNotLeaf()) Type = NodeType.RedRegular;
                 else Type = NodeType.RedLeaf;
             }
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

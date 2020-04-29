@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RedBlackTreeVisuals"
         mc:Ignorable="d"
+        RenderOptions.BitmapScalingMode="HighQuality"
         Icon="/Images/Logo/icon.ico"
         Title="Red-black tree" Height="450" Width="800">
     <Grid>

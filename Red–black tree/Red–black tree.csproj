@@ -119,5 +119,13 @@
   <ItemGroup>
     <Folder Include="Styles\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\black-leaf.png" />
+    <Resource Include="Images\red-leaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\black-regular.png" />
+    <Resource Include="Images\red-regular.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

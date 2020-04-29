@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedBlackTreeAlgorithms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -9,7 +10,12 @@ namespace RedBlackTreeVisuals
 {
     class RedBlackTreeViewModel<T> : INotifyPropertyChanged
     {
-        public RedBlackTreeNodeViewModel<T> root;
+        public RedBlackTreeViewModel(RedBlackTreeDuplicate<T> redBlackTree)
+        {
+            Root = new RedBlackTreeNodeViewModel<T>(redBlackTree.Root);
+        }
+
+        private RedBlackTreeNodeViewModel<T> root;
         public RedBlackTreeNodeViewModel<T> Root
         {
             get => root;

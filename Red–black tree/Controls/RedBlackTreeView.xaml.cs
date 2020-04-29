@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RedBlackTreeAlgorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace RedBlackTreeVisuals
         public RedBlackTreeView()
         {
             InitializeComponent();
-            this.DataContext = RedBlackTreeViewModel
+            this.DataContext = new RedBlackTreeViewModel<int>(RedBlackTreeDuplicate<int>.MakeExampleTree());
         }
     }
 }

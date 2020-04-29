@@ -67,6 +67,7 @@
     <Compile Include="Models\NodeColor.cs" />
     <Compile Include="Models\RedBlackTree.cs" />
     <Compile Include="Models\RedBlackTreeNode.cs" />
+    <Compile Include="ViewModel\NodePosition.cs" />
     <Compile Include="ViewModel\NodeType.cs" />
     <Compile Include="ViewModel\RedBlackTreeNodeViewModel.cs" />
     <Compile Include="ViewModel\RedBlackTreeViewModel.cs" />

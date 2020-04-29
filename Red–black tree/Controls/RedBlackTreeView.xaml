@@ -6,11 +6,12 @@
              xmlns:local="clr-namespace:RedBlackTreeVisuals"
              mc:Ignorable="d" 
              Height="450" Width="800"
-             ItemsSource="{Binding Items}">
+             ItemsSource="{Binding Root}">
     <TreeView.ItemTemplate>
         <HierarchicalDataTemplate>
             <StackPanel Orientation="Horizontal">
                 <Image Width="20" Margin="3" Source="{Binding Type, Converter={StaticResource NodeTypeToImageConverter }}" />
+                <TextBlock VerticalAlignment="Center" Text="{Binding Value}" />
             </StackPanel>
         </HierarchicalDataTemplate>
     </TreeView.ItemTemplate>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ namespace RedBlackTreeVisuals
             set
             {
                 this.value = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Value"));
+                OnPropertyChanged();
             }
         }
 
@@ -33,17 +34,17 @@ namespace RedBlackTreeVisuals
             set
             {
                 color = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Color"));
+                OnPropertyChanged();
             }
         }
-        private ObservableCollection<RedBlackTreeNodeViewModel<T>> children;
+        private ObservableCollection<RedBlackTreeNodeViewModel<T>> children = new ObservableCollection<RedBlackTreeNodeViewModel<T>>();
         public ObservableCollection<RedBlackTreeNodeViewModel<T>> Children
         {
             get => children;
             set
             {
                 children = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Children"));
+                OnPropertyChanged();
             }
         }
         private bool IsNotLeaf()
@@ -78,47 +79,55 @@ namespace RedBlackTreeVisuals
             set
             {
                 type = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("Type"));
+                OnPropertyChanged();
             }
         }
 
-        private bool isLeft;
+        private NodePosition position;
 
-        public bool IsLeft
+        public NodePosition Position
         {
-            get => isLeft;
+            get => position;
             set
             {
-                isLeft = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("IsLeft"));
+                position = value;
+                OnPropertyChanged();
             }
         }
         private void UpdateNodeProperties(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
         {
-            if (redBlackTreeNode.Left != null)
+            if (redBlackTreeNode != null)
             {
-                var left = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Left);
-                Children.Add(left);
+                if (redBlackTreeNode.Left != null)
+                {
+                    var left = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Left);
+                    Children.Add(left);
+                }
+                if (redBlackTreeNode.Left != null)
+                {
+                    var right = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Right);
+                    Children.Add(right);
+                }
+                Color = redBlackTreeNode.Color;
+                Value = redBlackTreeNode.Value;
+                if (redBlackTreeNode.Parrent == null) Position = NodePosition.Root;
+                else Position = (redBlackTreeNode.Parrent.Left == redBlackTreeNode) ? NodePosition.Left : NodePosition.Right;
+                if (Color == RedBlackTreeAlgorithms.NodeColor.Black)
+                {
+                    if (IsNotLeaf()) Type = NodeType.BlackRegular;
+                    else Type = NodeType.BlackLeaf;
+                }
+                else
+                {
+                    if (IsNotLeaf()) Type = NodeType.RedRegular;
+                    else Type = NodeType.RedLeaf;
+                }
             }
-            if (redBlackTreeNode.Left != null)
-            {
-                var right = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Right);
-                Children.Add(right);
-            }
-            IsLeft = (redBlackTreeNode.Parrent.Left == redBlackTreeNode) ? true : false; 
-            Color = redBlackTreeNode.Color;
-            Value = redBlackTreeNode.Value;
-            if (Color == RedBlackTreeAlgorithms.NodeColor.Black)
-            {
-                if (IsNotLeaf()) Type = NodeType.BlackRegular;
-                else Type = NodeType.BlackLeaf;
-            }
-            else
-            {
-                if (IsNotLeaf()) Type = NodeType.RedRegular;
-                else Type = NodeType.RedLeaf;
-            }
-            
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -52,19 +52,6 @@ namespace RedBlackTreeVisuals
             return Children?.Count(c => c != null) > 0;
         }
 
-        public bool IsExpanded
-        {
-            get
-            {
-                return IsNotLeaf();
-            }
-            set
-            {
-                if (value == false)
-                    ClearChildren();
-            }
-        }
-
         private void ClearChildren()
         {
             this.Children = new ObservableCollection<RedBlackTreeNodeViewModel<T>>();
@@ -103,7 +90,7 @@ namespace RedBlackTreeVisuals
                     var left = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Left);
                     Children.Add(left);
                 }
-                if (redBlackTreeNode.Left != null)
+                if (redBlackTreeNode.Right != null)
                 {
                     var right = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Right);
                     Children.Add(right);

@@ -24,7 +24,9 @@ namespace RedBlackTreeVisuals
         public RedBlackTreeView()
         {
             InitializeComponent();
-            this.DataContext = new RedBlackTreeViewModel<int>(RedBlackTreeDuplicate<int>.MakeExampleTree());
+            var tree = new RedBlackTreeViewModel<int>(RedBlackTreeDuplicate<int>.MakeExampleTree());
+            this.DataContext = tree;
+          
         }
     }
 }

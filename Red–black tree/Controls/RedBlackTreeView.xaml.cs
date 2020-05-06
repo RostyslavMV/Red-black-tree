@@ -26,7 +26,25 @@ namespace RedBlackTreeVisuals
             InitializeComponent();
             var tree = new RedBlackTreeViewModel<int>(RedBlackTreeDuplicate<int>.MakeExampleTree());
             this.DataContext = tree;
-          
+            
+        }
+    }
+
+    public class LeftRightItemTemplateSelector<T> : DataTemplateSelector
+    {
+        public override DataTemplate SelectTemplate(object item, DependencyObject container)
+        {
+            FrameworkElement element = container as FrameworkElement;
+            RedBlackTreeNodeViewModel<T> node = item as RedBlackTreeNodeViewModel<T>;
+            if (node.Position == NodePosition.Left)
+            {
+                return element.FindResource("LeftItemTemplate") as DataTemplate;
+            }
+            else if (node.Position == NodePosition.Right)
+            {
+                return element.FindResource("RightItemTemplate") as DataTemplate;
+            }
+            else return element.FindResource("RootItemTemplate") as DataTemplate;
         }
     }
 }

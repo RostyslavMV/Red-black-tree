@@ -6,21 +6,21 @@ using System.Windows.Media.Imaging;
 namespace RedBlackTreeVisuals
 {
     [ValueConversion(typeof(NodeType), typeof(BitmapImage))]
-    class NodeTypeToImageConverter : IValueConverter
+    class RightNodeTypeToImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var image = "Images/black-regular.png";
+            var image = "Images/black-regular-right.png";
             switch ((NodeType)value)
             {
                 case NodeType.RedRegular:
-                    image = "Images/red-regular.png";
+                    image = "Images/red-regular-right.png";
                     break;
                 case NodeType.BlackLeaf:
-                    image = "Images/black-leaf.png";
+                    image = "Images/black-leaf-right.png";
                     break;
                 case NodeType.RedLeaf:
-                    image = "Images/red-leaf.png";
+                    image = "Images/red-leaf-right.png";
                     break;
 
             }

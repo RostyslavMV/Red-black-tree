@@ -5,5 +5,27 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <local:NodeTypeToImageConverter x:Key="NodeTypeToImageConverter" />
+        <local:LeftNodeTypeToImageConverter x:Key="LeftNodeTypeToImageConverter" />
+        <local:RightNodeTypeToImageConverter x:Key="RightNodeTypeToImageConverter" />
+        <local:RootNodeTypeToImageConverter x:Key="RootNodeTypeToImageConverter" />
+        <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}" x:Key="RootItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Margin="3" Source="{Binding Type, Converter={StaticResource RootNodeTypeToImageConverter}}" />
+                <TextBlock VerticalAlignment="Center" Text="{Binding Value}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}" x:Key="LeftItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Margin="3" Source="{Binding Type, Converter={StaticResource LeftNodeTypeToImageConverter}}" />
+                <TextBlock VerticalAlignment="Center" Text="{Binding Value}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}" x:Key="RightItemTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Margin="3" Source="{Binding Type, Converter={StaticResource RightNodeTypeToImageConverter}}" />
+                <TextBlock VerticalAlignment="Center" Text="{Binding Value}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <local:LeftRightItemTemplateSelector x:Key="LeftRightItemTemplateSelector" />
     </Application.Resources>
 </Application>

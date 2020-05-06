@@ -10,7 +10,28 @@ using System.Threading.Tasks;
 
 namespace RedBlackTreeVisuals
 {
-    class RedBlackTreeNodeViewModel<T> : INotifyPropertyChanged
+    class BaseNodeViewModel : INotifyPropertyChanged
+    {
+
+        protected NodePosition position;
+
+        public NodePosition Position
+        {
+            get => position;
+            set
+            {
+                position = value;
+                OnPropertyChanged();
+            }
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
+    class RedBlackTreeNodeViewModel<T> : BaseNodeViewModel
     {
         public RedBlackTreeNodeViewModel(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
         {
@@ -70,17 +91,6 @@ namespace RedBlackTreeVisuals
             }
         }
 
-        private NodePosition position;
-
-        public NodePosition Position
-        {
-            get => position;
-            set
-            {
-                position = value;
-                OnPropertyChanged();
-            }
-        }
         private void UpdateNodeProperties(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
         {
             if (redBlackTreeNode != null)
@@ -111,12 +121,5 @@ namespace RedBlackTreeVisuals
                 }
             }
         }
-
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

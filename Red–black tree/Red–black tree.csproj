@@ -58,9 +58,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\RootItemControl.xaml.cs">
+      <DependentUpon>RootItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RightItemControl.xaml.cs">
+      <DependentUpon>RightItemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LeftItemControl.xaml.cs">
+      <DependentUpon>LeftItemControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\RedBlackTreeView.xaml.cs">
       <DependentUpon>RedBlackTreeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\RootNodeTypeToImageConverter.cs" />
+    <Compile Include="Converters\RightNodeTypeToImageConverter.cs" />
+    <Compile Include="Converters\LeftNodeTypeToImageConverter.cs" />
     <Compile Include="Converters\NodeTypeToImageConverter.cs" />
     <Compile Include="Duplicate classes\RedBlackTreeDuplicate.cs" />
     <Compile Include="Duplicate classes\RedBlackTreeNodeDuplicate.cs" />
@@ -71,6 +83,18 @@
     <Compile Include="ViewModel\NodeType.cs" />
     <Compile Include="ViewModel\RedBlackTreeNodeViewModel.cs" />
     <Compile Include="ViewModel\RedBlackTreeViewModel.cs" />
+    <Page Include="Controls\RootItemControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RightItemControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\LeftItemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\RedBlackTreeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +151,14 @@
   <ItemGroup>
     <Resource Include="Images\black-regular.png" />
     <Resource Include="Images\red-regular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\black-leaf-right.png" />
+    <Resource Include="Images\black-regular-left.png" />
+    <Resource Include="Images\black-regular-right.png" />
+    <Resource Include="Images\red-leaf-right.png" />
+    <Resource Include="Images\red-regular-left.png" />
+    <Resource Include="Images\red-regular-right.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

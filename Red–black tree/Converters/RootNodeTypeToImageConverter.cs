@@ -6,7 +6,7 @@ using System.Windows.Media.Imaging;
 namespace RedBlackTreeVisuals
 {
     [ValueConversion(typeof(NodeType), typeof(BitmapImage))]
-    class NodeTypeToImageConverter : IValueConverter
+    class RootNodeTypeToImageConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

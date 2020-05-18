@@ -76,6 +76,7 @@
     <Compile Include="Converters\NodeTypeToImageConverter.cs" />
     <Compile Include="Duplicate classes\RedBlackTreeDuplicate.cs" />
     <Compile Include="Duplicate classes\RedBlackTreeNodeDuplicate.cs" />
+    <Compile Include="Models\Iterator.cs" />
     <Compile Include="Models\NodeColor.cs" />
     <Compile Include="Models\RedBlackTree.cs" />
     <Compile Include="Models\RedBlackTreeNode.cs" />

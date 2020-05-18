@@ -6,27 +6,46 @@ using System.Threading.Tasks;
 
 namespace RedBlackTreeAlgorithms
 {
-    class RedBlackTreeNode<T>
+    public class Node
     {
-        public T Value { get; private set; }
-        public NodeColor Color { get; private set; }                                                   
-        public RedBlackTreeNode<T> Parrent { get; private set; }                              
-        public RedBlackTreeNode<T> Left { get; private set; }                                 
-        public RedBlackTreeNode<T> Right { get; private set; }                                
-                                                                                                   
-        RedBlackTreeNode(T value)                                                             
-        {                                                                                          
-            this.Value = value;                                                                    
-            Left = null;                                                                           
-            Right = null;                                                                          
-            Parrent = null;                                                                        
-        }                                                                                          
-        RedBlackTreeNode(T value, RedBlackTreeNode<T> parrentNode)                       
-        {                                                                                          
-            this.Value = value;                                                                    
+        public Node Left;
+        public Node Right;
+        public Node Parent;
+        public NodeColor Color;
+
+        public bool IsHeader
+        { get { return Color == NodeColor.Header; } }
+    }
+
+
+    public class RedBlackTreeNode<T> : Node
+    {
+        public T Data;
+
+        public RedBlackTreeNode()
+        {
+            Left = this;
+            Right = this;
+            Parent = null;
+            Color = NodeColor.Header;
+        }
+
+        public RedBlackTreeNode(T t)
+        {
             Left = null;
             Right = null;
-            Parrent = parrentNode;
+            Color = NodeColor.Black;
+            Data = t;
+        }
+
+        public override string ToString()
+        {
+            string StringOut = "{";
+
+            StringOut = StringOut + Data;
+
+            StringOut = StringOut + "}";
+            return StringOut;
         }
     }
 }

@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace RedBlackTreeAlgorithms
 {
+    public enum Direction { FromLeft, FromRight };
+
     public enum NodeColor
     {
+        Header,
         Red,
         Black
-    };
+    }
 }

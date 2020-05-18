@@ -12,7 +12,7 @@ namespace RedBlackTreeVisuals
 {
     class RedBlackTreeViewModel<T> : INotifyPropertyChanged
     {
-        public RedBlackTreeViewModel(RedBlackTreeDuplicate<T> redBlackTree)
+        public RedBlackTreeViewModel(RedBlackTree<T> redBlackTree)
         {
             Root = new RedBlackTreeNodeViewModel<T>(redBlackTree.Root);
             RootItem = new ObservableCollection<RedBlackTreeNodeViewModel<T>> { Root };

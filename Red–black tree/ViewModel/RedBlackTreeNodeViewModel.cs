@@ -33,7 +33,7 @@ namespace RedBlackTreeVisuals
     }
     class RedBlackTreeNodeViewModel<T> : BaseNodeViewModel
     {
-        public RedBlackTreeNodeViewModel(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
+        public RedBlackTreeNodeViewModel(RedBlackTreeNode<T> redBlackTreeNode)
         {
             UpdateNodeProperties(redBlackTreeNode);
         }
@@ -91,24 +91,24 @@ namespace RedBlackTreeVisuals
             }
         }
 
-        private void UpdateNodeProperties(RedBlackTreeNodeDuplicate<T> redBlackTreeNode)
+        private void UpdateNodeProperties(RedBlackTreeNode<T> redBlackTreeNode)
         {
             if (redBlackTreeNode != null)
             {
                 if (redBlackTreeNode.Left != null)
                 {
-                    var left = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Left);
+                    var left = new RedBlackTreeNodeViewModel<T>((RedBlackTreeNode<T>)redBlackTreeNode.Left);
                     Children.Add(left);
                 }
                 if (redBlackTreeNode.Right != null)
                 {
-                    var right = new RedBlackTreeNodeViewModel<T>(redBlackTreeNode.Right);
+                    var right = new RedBlackTreeNodeViewModel<T>((RedBlackTreeNode<T>)redBlackTreeNode.Right);
                     Children.Add(right);
                 }
                 Color = redBlackTreeNode.Color;
-                Value = redBlackTreeNode.Value;
-                if (redBlackTreeNode.Parrent == null) Position = NodePosition.Root;
-                else Position = (redBlackTreeNode.Parrent.Left == redBlackTreeNode) ? NodePosition.Left : NodePosition.Right;
+                Value = redBlackTreeNode.Data;
+                if (redBlackTreeNode.Parent == null) Position = NodePosition.Root;
+                else Position = (redBlackTreeNode.Parent.Left == redBlackTreeNode) ? NodePosition.Left : NodePosition.Right;
                 if (Color == RedBlackTreeAlgorithms.NodeColor.Black)
                 {
                     if (IsNotLeaf()) Type = NodeType.BlackRegular;

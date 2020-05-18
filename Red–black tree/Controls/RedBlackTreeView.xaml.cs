@@ -13,7 +13,12 @@ namespace RedBlackTreeVisuals
         public RedBlackTreeView()
         {
             InitializeComponent();
-            var tree = new RedBlackTreeViewModel<int>(RedBlackTreeDuplicate<int>.MakeExampleTree());
+            RedBlackTree<int> RBtree = new RedBlackTree<int>();
+            RBtree.Add(5);
+            RBtree.Add(4);
+            RBtree.Add(3);
+            RBtree.Add(7);
+            var tree = new RedBlackTreeViewModel<int>(RBtree);
             this.DataContext = tree;
 
         }

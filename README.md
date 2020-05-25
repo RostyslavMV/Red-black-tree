@@ -33,6 +33,7 @@ Anton Hladkiy:
 -Tests
 
 Patterns:
+
 -Iterator
 
 -Strategy(to do)

@@ -28,7 +28,14 @@ Anton Hladkiy:
 
 -Model
 
+-Algorithms implementation
+
+-Tests
+
 Patterns:
+-Iterator
+
+-Strategy(to do)
 
 
 

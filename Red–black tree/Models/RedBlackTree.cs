@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections;
 namespace RedBlackTreeAlgorithms
 {
-    class RedBlackTree<T> : IteratorAggregate
+    public class RedBlackTree<T> : IteratorAggregate
     {
         RedBlackTreeNode<T> Header;
         IComparer<T> Comparer;

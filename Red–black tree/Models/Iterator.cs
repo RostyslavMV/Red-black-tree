@@ -24,7 +24,7 @@ namespace RedBlackTreeAlgorithms
         public abstract void Reset();
     }
 
-    abstract class IteratorAggregate : IEnumerable
+    public abstract class IteratorAggregate : IEnumerable
     {
         // Возвращает Iterator или другой IteratorAggregate для реализующего
         // объекта.

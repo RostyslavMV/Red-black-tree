@@ -16,6 +16,8 @@ Rostyslav Mochulskyi:
 
 -View
 
+-Unit Tests
+
 Patterns:
 
 -MVVM
